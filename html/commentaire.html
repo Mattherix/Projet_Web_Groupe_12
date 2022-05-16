@@ -75,7 +75,16 @@
     }
     
     function addCommentForm(form) {
-      console.log(form.entities());
+      var pseudo = form.elements["pseudo"].value;
+      var comment = form.elements["comment"].value;
+
+      if (pseudo && comment) {
+        newComment(pseudo, comment);
+      } else {
+        alert("Merci de remplir les champs !");
+      }
+      
+      form.elements["comment"].value = "";
 
       // To disable form
       return false;
