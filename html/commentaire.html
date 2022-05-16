@@ -11,13 +11,6 @@
 
   <main>
     <h2>Vos commentaires</h2>
-    <table id="commentaires">
-      <tr>
-        <th>Pseudo</th>
-        <th>Commentaire</th>
-      </tr>
-    </table>
-
     <form onsubmit="return addCommentForm(this)">
       <label for="pseudo">Pseudo:</label>
       <input type="text" id="pseudo" name="pseudo">
@@ -26,6 +19,12 @@
       <input type="reset" value="Reset">
       <input type="submit" value="Commenter">
     </form>
+    <table id="commentaires">
+      <tr>
+        <th>Pseudo</th>
+        <th>Commentaire</th>
+      </tr>
+    </table>
   </main>
 
   <footer w3-include-html="common/footer.html"></footer>
@@ -42,8 +41,8 @@
         return JSON.parse(localStorage.getItem("comments"));
       } else {
         var defaultData = [
-          ["RMS", "Ce n'est pas Linux mais GNU/Linux"],
-          ["Linus Torvalds", "Non Richard, non ..."]
+          ["Linus Torvalds", "Non Richard, non ..."],
+          ["RMS", "Ce n'est pas Linux mais GNU/Linux"]
         ];
         setTabToLocalStorage(defaultData);
         return getTabFromLocalStorage();
@@ -60,7 +59,7 @@
 
     function addRowToTable(pseudo, comment) {
       var comments = document.getElementById("commentaires");
-      var row = comments.insertRow();
+      var row = comments.insertRow(0);
 
       var p = row.insertCell(0);
       var c = row.insertCell(1);
@@ -70,7 +69,7 @@
     }
 
     function newComment(pseudo, comment) {
-      setTabToLocalStorage([...getTabFromLocalStorage(), [pseudo, comment]]);
+      setTabToLocalStorage([[pseudo, comment], ...getTabFromLocalStorage()]);
       addRowToTable(pseudo, comment);
     }
     
