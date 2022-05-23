@@ -1,0 +1,17 @@
+name: W3c validator
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run W3c Validator
+      uses: bucherfa/w3c-validator-action@v0.2
+    
