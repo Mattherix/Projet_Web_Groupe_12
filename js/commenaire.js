@@ -1,8 +1,15 @@
-function setTabToLocalStorage(table) {
+/* Data is formated using JsOn
+ It's an array of comments
+[
+  [username, comment],
+]
+*/
+
+function setCommentsToLocalStorage(table) {
   localStorage.setItem("comments", JSON.stringify(table));
 }
 
-function getTabFromLocalStorage() {
+function getCommentsFromLocalStorage() {
   var data = localStorage.getItem("comments");
   if (data) {
     return JSON.parse(localStorage.getItem("comments"));
@@ -11,13 +18,13 @@ function getTabFromLocalStorage() {
       ["Linus Torvalds", "Non Richard, non ..."],
       ["RMS", "Ce n'est pas Linux mais GNU/Linux"]
     ];
-    setTabToLocalStorage(defaultData);
-    return getTabFromLocalStorage();
+    setCommentsToLocalStorage(defaultData);
+    return getCommentsFromLocalStorage();
   } 
 }
 
 function loadComments() {
-  var tab = getTabFromLocalStorage();
+  var tab = getCommentsFromLocalStorage();
   document.getElementById("commentaires").rows.length;
   tab.forEach(element => {
     addRowToTable(...element);
@@ -36,7 +43,7 @@ function addRowToTable(pseudo, comment) {
 }
 
 function newComment(pseudo, comment) {
-  setTabToLocalStorage([[pseudo, comment], ...getTabFromLocalStorage()]);
+  setCommentsToLocalStorage([[pseudo, comment], ...getCommentsFromLocalStorage()]);
   addRowToTable(pseudo, comment);
 }
 
