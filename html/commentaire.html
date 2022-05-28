@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script src="/js/commenaire.js"></script>
   <title>Vos commentaires</title>
 </head>
 <body>
@@ -30,64 +31,6 @@
   <footer w3-include-html="common/footer.html"></footer>
   <script>
     w3.includeHTML();
-
-    function setTabToLocalStorage(table) {
-      localStorage.setItem("comments", JSON.stringify(table));
-    }
-
-    function getTabFromLocalStorage() {
-      var data = localStorage.getItem("comments");
-      if (data) {
-        return JSON.parse(localStorage.getItem("comments"));
-      } else {
-        var defaultData = [
-          ["Linus Torvalds", "Non Richard, non ..."],
-          ["RMS", "Ce n'est pas Linux mais GNU/Linux"]
-        ];
-        setTabToLocalStorage(defaultData);
-        return getTabFromLocalStorage();
-      } 
-    }
-
-    function loadComments() {
-      var tab = getTabFromLocalStorage();
-      document.getElementById("commentaires").rows.length;
-      tab.forEach(element => {
-        addRowToTable(...element);
-      });
-    }
-
-    function addRowToTable(pseudo, comment) {
-      var comments = document.getElementById("commentaires");
-      var row = comments.insertRow(1);
-
-      var p = row.insertCell(0);
-      var c = row.insertCell(1);
-
-      p.innerHTML = pseudo;
-      c.innerHTML = comment;
-    }
-
-    function newComment(pseudo, comment) {
-      setTabToLocalStorage([[pseudo, comment], ...getTabFromLocalStorage()]);
-      addRowToTable(pseudo, comment);
-    }
-    
-    function addCommentForm(form) {
-      var pseudo = form.elements["pseudo"].value;
-      var comment = form.elements["comment"].value;
-
-      if (pseudo && comment) {
-        newComment(pseudo, comment);
-      } else {
-        alert("Merci de remplir les champs !");
-      }
-      
-      form.elements["comment"].value = "";
-
-      // To disable form
-      return false;
-    }
     loadComments();
   </script>
 </body>
