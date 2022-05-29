@@ -1,3 +1,9 @@
+body {
+  background-image: url('/images/gnu-light-wallpapers.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 a {
   text-decoration: inherit;
 }
@@ -6,7 +12,13 @@ a:visited {
   color: blue;
 }
 
-main p {
+/* Sometime the text can be unreadable because of the icon in the bg */
+.unreadable {
+  background-color: rgba(211, 211, 211, 0.6);
+  border-radius: 2%;
+}
+
+main .paragraphe {
   /* border: 2px solid #ccc;*/
   text-align: justify;
 }
