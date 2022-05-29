@@ -2,13 +2,22 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <script src="https://www.w3schools.com/lib/w3.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/css/header.css"><link rel="stylesheet" href="/css/footer.css"><link rel="stylesheet" href="/css/navbar.css">
   <title>Histoire de Linux</title>
 </head>
 <body>
-  <header w3-include-html="common/header.html"></header>
-  <nav w3-include-html="common/navbar.html"></nav>
+  <div id="title">
+    <a href="/html/"><img src="/images/Tux.svg" alt="Tux"></a>
+    <h1>Linux Historia</h1>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="/html/index.html">Accueil</a></li>
+      <li><a href="/html/histoire.html">Histoire</a></li>
+      <li><a href="/html/commentaire.html">Commentaire</a></li>
+      <li><a href="/html/apropos.html">À propos</a></li>
+    </ul>
+  </div>
 
   <main class="unreadable">
     <h1>Histoire de Linux</h1>
@@ -26,9 +35,9 @@
     Source : <Source><a href="//www.journaldunet.fr/web-tech/guide-de-l-entreprise-digitale/1091588-kernel-linux-open-source-8/">Journal du net</a></Source>
   </main>
 
-  <footer w3-include-html="common/footer.html"></footer>
-  <script>
-    w3.includeHTML();
-  </script>
+  <div id="copyright">
+    <a href="/html/apropos.html">À propos</a><br>
+    Copyright 2022-<div id="currentYear"></div>
+  </div>
 </body>
 </html>

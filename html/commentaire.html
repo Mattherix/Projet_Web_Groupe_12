@@ -2,14 +2,23 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <script src="https://www.w3schools.com/lib/w3.js"></script>
   <script src="/js/commenaire.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/css/header.css"><link rel="stylesheet" href="/css/footer.css"><link rel="stylesheet" href="/css/navbar.css">
   <title>Vos commentaires</title>
 </head>
 <body>
-  <header w3-include-html="common/header.html"></header>
-  <nav w3-include-html="common/navbar.html"></nav>
+  <div id="title">
+    <a href="/html/"><img src="/images/Tux.svg" alt="Tux"></a>
+    <h1>Linux Historia</h1>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="/html/index.html">Accueil</a></li>
+      <li><a href="/html/histoire.html">Histoire</a></li>
+      <li><a href="/html/commentaire.html">Commentaire</a></li>
+      <li><a href="/html/apropos.html">À propos</a></li>
+    </ul>
+  </div>
 
   <main>
     <h2>Vos commentaires</h2>
@@ -27,9 +36,11 @@
     </table>
   </main>
 
-  <footer w3-include-html="common/footer.html"></footer>
+  <div id="copyright">
+    <a href="/html/apropos.html">À propos</a><br>
+    Copyright 2022-<div id="currentYear"></div>
+  </div>
   <script>
-    w3.includeHTML();
     loadComments();
   </script>
 </body>
