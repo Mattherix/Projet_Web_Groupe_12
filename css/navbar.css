@@ -1,0 +1,30 @@
+#menu, #menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+#menu li {
+  display: inline-block;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: .5%;
+  padding-bottom: .5%;
+  border-radius: 5px;
+  color: white;
+  background-color: #073e9c;
+}
+
+#menu li:hover {
+  transition: .3s all .3s;
+  border-radius: 15px;
+  background-color: #090979;
+  color: gray;
+}
+#menu a {
+  color: inherit;
+}
+#menu a:hover {
+  transition: .3s all .3s;
+  color: lightgray;
+}
