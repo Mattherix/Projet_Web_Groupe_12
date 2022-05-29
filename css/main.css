@@ -5,3 +5,22 @@ a {
 a:visited {
   color: blue;
 }
+
+main p {
+  /* border: 2px solid #ccc;*/
+  text-align: justify;
+}
+
+main h1 {
+  font-family: Brush Script MT,cursive;
+  text-align: center;
+  font-size: 75px;
+}
+main h2 {
+  font-family: Brush Script MT,cursive;
+  font-size: 50px;
+}
+main h3 {
+  font-family: Brush Script MT,cursive;
+  font-size: 25px;
+}
