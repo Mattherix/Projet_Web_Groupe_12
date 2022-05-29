@@ -57,3 +57,23 @@ main h3 {
   border-radius: 0% 25% 25% 0%;
   background-color: lightgrey;
 }
+
+#commentForm {
+  padding-bottom: 1%;
+}
+#commentForm input:first-child{
+  width: 8%;
+  border-radius: 10px;
+}
+#commentForm input:nth-child(2) {
+  width: 75%;
+  border-radius: 10px;
+}
+#commentForm input:nth-child(3) {
+  width: auto;
+  border-radius: 10px;
+}
+#commentForm input:nth-child(4) {
+  width: auto;
+  border-radius: 10px;
+}

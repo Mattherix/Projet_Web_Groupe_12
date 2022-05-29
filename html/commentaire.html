@@ -13,11 +13,9 @@
 
   <main>
     <h2>Vos commentaires</h2>
-    <form onsubmit="return addCommentForm(this)">
-      <label for="pseudo">Pseudo:</label>
-      <input type="text" id="pseudo" name="pseudo">
-      <label for="comment">Comment:</label>
-      <input type="text" id="comment" name="comment">
+    <form id="commentForm" onsubmit="return addCommentForm(this)">
+      <input type="text" id="pseudo" name="pseudo" placeholder="Pseudo">
+      <input type="text" id="comment" name="Comment" placeholder="comment">
       <input type="reset" value="Reset">
       <input type="submit" value="Commenter">
     </form>
