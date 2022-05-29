@@ -24,3 +24,24 @@ main h3 {
   font-family: Brush Script MT,cursive;
   font-size: 25px;
 }
+
+#commentaires {
+  overflow-x:auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#commentaires tr:first-child {
+  background-color: lightgrey;
+}
+
+#commentaires tr:not(:first-child) {
+  background-color: #eee;
+}
+#commentaires tr td:nth-child(1) {
+  font-weight: bold;
+  /* border: 2px solid #ccc; */
+  text-align: center;
+  border-radius: 0% 25% 25% 0%;
+  background-color: lightgrey;
+}
