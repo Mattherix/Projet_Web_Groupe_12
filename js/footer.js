@@ -1,5 +1,4 @@
 function copyrightYear() {
-  let y = document.getElementById('currentYear');
-  y.innerHTML = new Date().getFullYear();
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
 }
 copyrightYear()
