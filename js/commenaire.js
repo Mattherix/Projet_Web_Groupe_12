@@ -5,6 +5,14 @@
 ]
 */
 
+function loadComments() {
+  var tab = getCommentsFromLocalStorage();
+  document.getElementById("commentaires").rows.length;
+  tab.forEach(element => {
+    addRowToTable(...element);
+  });
+}
+
 function setCommentsToLocalStorage(table) {
   localStorage.setItem("comments", JSON.stringify(table));
 }
@@ -25,14 +33,6 @@ function getCommentsFromLocalStorage() {
     setCommentsToLocalStorage(defaultData);
     return getCommentsFromLocalStorage();
   } 
-}
-
-function loadComments() {
-  var tab = getCommentsFromLocalStorage();
-  document.getElementById("commentaires").rows.length;
-  tab.forEach(element => {
-    addRowToTable(...element);
-  });
 }
 
 function addRowToTable(pseudo, comment) {
